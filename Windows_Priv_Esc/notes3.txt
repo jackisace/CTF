@@ -1,0 +1,27 @@
+dump installed software:
+    wmic product get name,version,vendor
+
+enumeration tools:
+    https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS
+    https://github.com/itm4n/PrivescCheck
+    https://github.com/bitsadmin/wesng
+
+metasploit (with active session):
+    multi/recon/local_exploit_suggester
+
+
+
+
+
+Links:
+
+    https://github.com/gtworek/Priv2Admin
+    https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md
+    https://github.com/gtworek/Priv2Admin
+    https://github.com/antonioCoco/RogueWinRM
+    https://jlajara.gitlab.io/others/2020/11/22/Potatoes_Windows_Privesc.html
+    https://decoder.cloud/
+    https://dl.packetstormsecurity.net/papers/presentations/TokenKidnapping.pdf
+
+
+

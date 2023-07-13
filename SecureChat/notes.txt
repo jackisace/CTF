@@ -1,0 +1,39 @@
+10.102.126.68
+
+test.php:
+<?php
+error_reporting(0);
+
+// New "resetID" algorithm used for password reset
+$uid = md5( strrev(strtoupper($email)) . rand(0,99) . time() );
+
+// New message template
+$message  = "Hi " . $username . ",<br/>";
+$message .= "You recently requested password reset for Secure-Chat account.<br/>";
+
+$message .= "Click the link below to reset it.<br/><br/>";
+$message .= "http://" . $domain . "/forgot.php?resetID=" . urlencode($uid) . "<br/><br/>";
+
+$message .= "If you did not request a password reset, please ignore this email or reply to let us know.<br/>";
+$message .= "Thanks,<br/>";
+$message .= $company_footer;
+
+/* ---- IMPORTANT ----
+   I already updated "forgot.php" file. @paloma */
+
+highlight_file('test.php');
+?>
+
+
+
+
+
+
+83kwhq@secure-chat.co.uk
+56c338fe1fd79441
+
+
+http://10.102.126.68/login.php?email=83kwhq%40secure-chat.co.uk&pass=56c338fe1fd79441
+
+
+0n_600d_7r4ck

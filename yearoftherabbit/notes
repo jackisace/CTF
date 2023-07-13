@@ -1,0 +1,33 @@
+eli
+DSpDiM1wAEwid
+
+
+╔══════════╣ Searching uncommon passwd files (splunk)
+passwd file: /etc/pam.d/passwd                                                                                      
+passwd file: /etc/passwd
+passwd file: /usr/bin/passwd
+passwd file: /usr/share/bash-completion/completions/passwd
+passwd file: /usr/share/lintian/overrides/passwd
+
+
+
+/usr/share/gutenprint/5.2/xml/printers.xml
+
+
+/home/gwendoline/.bashrc
+/home/gwendoline/.profile
+
+╔══════════╣ Readable files belonging to root and readable by me but not world readable
+-rw-r----- 1 root dip 1093 Apr 25  2015 /etc/ppp/peers/provider                                                     
+-rw-r----- 1 root dip 656 Apr 25  2015 /etc/chatscripts/provider
+
+/live-build
+
+╔══════════╣ Modified interesting files in the last 5mins (limit 100)
+/var/mail/mail                                                                                                      
+/var/log/messages
+/var/log/auth.log
+/var/log/kern.log
+/var/log/syslog
+
+

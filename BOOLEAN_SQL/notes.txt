@@ -200,6 +200,12 @@ http://10.102.100.187/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT flag F
 
 
 
+creds:
+stefan@immersivenews.co.uk = b3stc0d3reu
+alex@immersivenews.co.uk   = th1sp@ssw0rd1zamaz1ng
+will@immersivenews.co.uk   = t3stings0mestuffzz
+
+
 
 
 

